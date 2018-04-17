@@ -1,0 +1,32 @@
+{
+  "name": "@umm/scripts",
+  "version": "1.0.0",
+  "description": "Scripts for umm",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "bin": {
+    "umm-init": "bin/init.js",
+    "umm-install": "bin/install.js",
+    "umm-uninstall": "bin/uninstall.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/umm-projects/scripts"
+  },
+  "author": "Tetsuya Mori",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/umm-projects/scripts/issues"
+  },
+  "homepage": "https://github.com/umm-projects/scripts#readme",
+  "dependencies": {
+    "glob": "^7.1.2",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.2"
+  },
+  "devDependencies": {
+    "jasmine": "^3.1.0"
+  }
+}
