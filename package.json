@@ -4,6 +4,7 @@
   "description": "Scripts for umm",
   "main": "index.js",
   "scripts": {
+    "build:test": "tar -tf $(npm pack -s) && $(npm bin)/rimraf $_",
     "test": "jasmine"
   },
   "bin": {
@@ -11,6 +12,12 @@
     "umm-install": "bin/install.js",
     "umm-uninstall": "bin/uninstall.js"
   },
+  "files": [
+    "bin/",
+    "lib/",
+    "src/",
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/umm-projects/scripts"
