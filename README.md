@@ -24,7 +24,7 @@ Scripts for umm modules.
 
 ```json
 {
-  // ...
+
   "scripts": {
     "umm:init": "./node_modules/.bin/umm-init",
     "umm:install": "./node_modules/.bin/umm-install",
@@ -32,7 +32,7 @@ Scripts for umm modules.
     "postinstall": "npm run --silent umm:install",
     "postuninstall": "npm run --silent umm:uninstall"
   },
-  // ...
+
 }
 ```
 
@@ -43,7 +43,7 @@ Scripts for umm modules.
 
 ```json
 {
-  // ...
+
   "scripts": {
     "umm:init": "./node_modules/.bin/umm-init",
     "umm:install": "./node_modules/.bin/umm-install",
@@ -51,7 +51,7 @@ Scripts for umm modules.
     "postinstall": "npm run --silent umm:install && node ./scripts/postinstall.js",
     "postuninstall": "npm run --silent umm:uninstall"
   },
-  // ...
+
 }
 ```
 
