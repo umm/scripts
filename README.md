@@ -65,15 +65,13 @@ const umm = require('@umm/scripts');
 umm.libraries.synchronize("path/to/source", "path/to/destination");
 ```
 
-*
-
 ## Signature
 
 ### `libraries.synchronize(source_path, destination_path, [patterns], [overwrite_options], [callback])`
 
 * Synchronize assets flexiblly.
 
-#### Detail
+#### Arguments of `libraries.synchronize`
 
 | Argument | Type | Description |
 | --- | --- | --- |
@@ -83,9 +81,7 @@ umm.libraries.synchronize("path/to/source", "path/to/destination");
 | overwrite_options | `{Object}` | Overwrite default options |
 | callback | `{Function}` | Callback function |
 
-#### Details of patterns
-
-#### Detail
+##### Details of patterns
 
 | Key | Type | Description | Default |
 | --- | --- | --- | --- |
@@ -95,11 +91,9 @@ umm.libraries.synchronize("path/to/source", "path/to/destination");
 | remove_empty_source_directory | `{Boolean}` | Remove empty directory in source path after finish processing `remove_source`. | false |
 | remove_deleted_files | `{Boolean}` | Remove files that do not exist on the source path. | false |
 
-#### Details of overwrite_options
+##### Details of overwrite_options
 
 * Parameters are ignored if specified by patterns.
-
-#### Detail
 
 | Key | Type | Description | Default |
 | --- | --- | --- | --- |
@@ -112,7 +106,7 @@ umm.libraries.synchronize("path/to/source", "path/to/destination");
 
 * Information of module as JavaScript `Object`.
 
-#### Detail
+#### Details of `libraries.info`
 
 | Key | Type | Description |
 | --- | --- | --- |
