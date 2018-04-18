@@ -127,7 +127,7 @@ umm.libraries.synchronize("path/to/source", "path/to/destination");
 
 #### Example
 
-```json
+```javascript
 {
   npm_package_name: "@umm/sample_module",
   has_scope: true,
