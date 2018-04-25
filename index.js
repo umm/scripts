@@ -1,8 +1,14 @@
 module.exports = {
   scripts: {
     init: require('./src/init'),
-    install: require('./src/install'),
-    uninstall: require('./src/uninstall'),
+    module: {
+      install: require('./src/module/install'),
+      uninstall: require('./src/module/uninstall'),
+    },
+    project: {
+      deploy: require('./src/project/deploy'),
+      remove: require('./src/project/remove'),
+    }
   },
   libraries: {
     synchronize: require('./lib/synchronize'),

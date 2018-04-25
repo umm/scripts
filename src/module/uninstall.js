@@ -1,7 +1,7 @@
-const info = require('../lib/info');
 const path = require('path');
 const fs = require('fs');
 const rimraf = require('rimraf');
+const info = require('../../lib/info');
 
 module.exports = () => {
   if (info.development_install) {
