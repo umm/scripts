@@ -9,8 +9,12 @@
   },
   "bin": {
     "umm-init": "bin/init.js",
-    "umm-install": "bin/install.js",
-    "umm-uninstall": "bin/uninstall.js"
+    "umm-install": "bin/module/install.js",
+    "umm-uninstall": "bin/module/uninstall.js",
+    "umm-module-install": "bin/module/install.js",
+    "umm-module-uninstall": "bin/module/uninstall.js",
+    "umm-project-deploy": "bin/project/deploy.js",
+    "umm-project-remove": "bin/project/remove.js"
   },
   "files": [
     "bin/",

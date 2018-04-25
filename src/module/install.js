@@ -1,7 +1,7 @@
 const util = require('util');
 const path = require('path');
-const info = require('../lib/info');
-const synchronize = util.promisify(require('../lib/synchronize'));
+const info = require('../../lib/info');
+const synchronize = util.promisify(require('../../lib/synchronize'));
 
 module.exports = () => {
   if (info.development_install) {
