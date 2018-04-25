@@ -30,6 +30,7 @@
   "homepage": "https://github.com/umm-projects/scripts#readme",
   "dependencies": {
     "glob": "^7.1.2",
+    "ignore-walk": "^3.0.1",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.6.2"
   },
