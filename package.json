@@ -8,9 +8,9 @@
     "test": "jasmine"
   },
   "bin": {
-    "umm-init": "bin/init.js",
-    "umm-install": "bin/install.js",
-    "umm-uninstall": "bin/uninstall.js"
+    "umm-init": "bin/module/init.js",
+    "umm-install": "bin/module/install.js",
+    "umm-uninstall": "bin/module/uninstall.js"
   },
   "files": [
     "bin/",
