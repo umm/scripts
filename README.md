@@ -8,8 +8,10 @@ Scripts for umm modules.
 ## Script list
 
 * init
-* install
-* uninstall
+* module/install
+* module/uninstall
+* project/deploy
+* project/remove
 
 ## Library list
 
@@ -26,9 +28,9 @@ Scripts for umm modules.
 {
 
   "scripts": {
-    "umm:init": "./node_modules/.bin/umm-init",
-    "umm:install": "./node_modules/.bin/umm-install",
-    "umm:uninstall": "./node_modules/.bin/umm-uninstall",
+    "umm:init": "$(npm bin)/umm-init",
+    "umm:module:install": "$(npm bin)/umm-module-install",
+    "umm:module:uninstall": "$(npm bin)/umm-module-uninstall",
     "postinstall": "npm run --silent umm:install",
     "postuninstall": "npm run --silent umm:uninstall"
   },
@@ -36,8 +38,8 @@ Scripts for umm modules.
 }
 ```
 
-* Automatic deployment by `umm:install`.
-* Copy assets to `Assets/Modules/<scope>@<module>/` from `Assets/` in modules excepts listed in `.npmignore`.
+* Automatic deployment by `umm:module:install`.
+* Copy assets to `Assets/Modules/<module_name>/` from `Assets/` in modules excepts listed in `.npmignore`.
 
 #### Customized
 
@@ -45,9 +47,9 @@ Scripts for umm modules.
 {
 
   "scripts": {
-    "umm:init": "./node_modules/.bin/umm-init",
-    "umm:install": "./node_modules/.bin/umm-install",
-    "umm:uninstall": "./node_modules/.bin/umm-uninstall",
+    "umm:init": "$(npm bin)/umm-init",
+    "umm:module:install": "$(npm bin)/umm-module-install",
+    "umm:module:uninstall": "$(npm bin)/umm-module-uninstall",
     "postinstall": "npm run --silent umm:install && node ./scripts/postinstall.js",
     "postuninstall": "npm run --silent umm:uninstall"
   },
@@ -57,7 +59,26 @@ Scripts for umm modules.
 
 * Append calling script into `postinstall` section if you need to customized deploy.
 
-### postinstall.js
+#### Deploy as sub project
+
+```json
+{
+
+  "scripts": {
+    "umm:init": "$(npm bin)/umm-init",
+    "umm:project:deploy": "$(npm bin)/umm-project-deploy",
+    "umm:project:remove": "$(npm bin)/umm-project-remove",
+    "postinstall": "npm run --silent project:deploy",
+    "postuninstall": "npm run --silent project:remove"
+  },
+
+}
+```
+
+* Automatic deployment by `umm:project:deploy`
+* Copy assets to `Assets/Projects/<module_name>/` from `Assets/` in modules excepts listed in `.npmignore`.
+
+### Sample for `postinstall.js`
 
 ```javascript
 const umm = require('@umm/scripts');
