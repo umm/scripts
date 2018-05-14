@@ -10,7 +10,9 @@
   "bin": {
     "umm-init": "bin/module/init.js",
     "umm-install": "bin/module/install.js",
-    "umm-uninstall": "bin/module/uninstall.js"
+    "umm-uninstall": "bin/module/uninstall.js",
+    "project-deploy": "bin/project/deploy.js",
+    "project-remove": "bin/project/remove.js"
   },
   "files": [
     "bin/",

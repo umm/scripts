@@ -26,9 +26,9 @@ Scripts for umm modules.
 {
 
   "scripts": {
-    "umm:init": "./node_modules/.bin/umm-init",
-    "umm:install": "./node_modules/.bin/umm-install",
-    "umm:uninstall": "./node_modules/.bin/umm-uninstall",
+    "umm:init": "$(npm bin)/umm-init",
+    "umm:install": "$(npm bin)/umm-install",
+    "umm:uninstall": "$(npm bin)/umm-uninstall",
     "postinstall": "npm run --silent umm:install",
     "postuninstall": "npm run --silent umm:uninstall"
   },
@@ -45,9 +45,9 @@ Scripts for umm modules.
 {
 
   "scripts": {
-    "umm:init": "./node_modules/.bin/umm-init",
-    "umm:install": "./node_modules/.bin/umm-install",
-    "umm:uninstall": "./node_modules/.bin/umm-uninstall",
+    "umm:init": "$(npm bin)/umm-init",
+    "umm:install": "$(npm bin)/umm-install",
+    "umm:uninstall": "$(npm bin)/umm-uninstall",
     "postinstall": "npm run --silent umm:install && node ./scripts/postinstall.js",
     "postuninstall": "npm run --silent umm:uninstall"
   },
@@ -64,6 +64,24 @@ const umm = require('@umm/scripts');
 
 umm.libraries.synchronize("path/to/source", "path/to/destination");
 ```
+
+### Deploy as sub project
+
+```json
+{
+
+  "scripts": {
+    "project:deploy": "$(npm bin)/project-deploy",
+    "project:remove": "$(npm bin)/project-remove",
+    "postinstall": "npm run --silent project:deploy",
+    "postuninstall": "npm run --silent project:remove"
+  },
+
+}
+```
+
+* Automatic deployment by `project:deploy`
+* Copy assets to `Assets/Projects/<module_name>/` from `Assets/` in modules excepts listed in `.npmignore`.
 
 ## Signature
 
