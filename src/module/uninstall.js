@@ -7,7 +7,7 @@ module.exports = () => {
     return;
   }
 
-  if (fs.existsSync(info.destination_path)) {
-    rimraf(info.destination_path);
+  if (fs.existsSync(path.join(info.base_path, 'Assets', 'Modules', info.module_name))) {
+    rimraf(path.join(info.base_path, 'Assets', 'Modules', info.module_name));
   }
 };
