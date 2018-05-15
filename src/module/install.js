@@ -10,6 +10,9 @@ module.exports = () => {
 
   synchronize(
     path.join(info.package_path, 'Assets'),
-    path.join(info.base_path, 'Assets', 'Modules', info.module_name)
+    path.join(info.base_path, 'Assets', 'Modules', info.module_name),
+    {
+      remove_deleted_files: true
+    }
   );
 };
