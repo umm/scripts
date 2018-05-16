@@ -9,6 +9,6 @@ module.exports = () => {
   }
 
   if (fs.existsSync(path.join(info.base_path, 'Assets', 'Projects', info.name))) {
-    rimraf(path.join(info.base_path, 'Assets', 'Projects', info.name));
+    rimraf.sync(path.join(info.base_path, 'Assets', 'Projects', info.name));
   }
 };
