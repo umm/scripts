@@ -1,6 +1,6 @@
 {
   "name": "@umm/scripts",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Scripts for umm",
   "main": "index.js",
   "scripts": {
