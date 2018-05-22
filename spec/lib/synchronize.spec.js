@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 
 const mkdirp = require('mkdirp');
-const rimraf = require('rimraf');
 
 const umm = require('../../index');
 
@@ -22,7 +21,7 @@ describe("Synchronize", () => {
   });
 
   afterEach(() => {
-    rimraf.sync(OUTPUT_DIRECTORY);
+    umm.libraries.removeRecursive(OUTPUT_DIRECTORY);
   });
 
   it("normal", () => {
