@@ -4,7 +4,6 @@
   "description": "Scripts for umm",
   "main": "index.js",
   "scripts": {
-    "build:test": "tar -tf $(npm pack -s) && $(npm bin)/rimraf $_",
     "test": "jasmine"
   },
   "bin": {
