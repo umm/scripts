@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
-const rimraf = require('rimraf');
 const info = require('../../lib/info');
+const removeRecursive = require('../../lib/removeRecursive');
 
 module.exports = () => {
   if (info.development_install) {
@@ -9,6 +9,6 @@ module.exports = () => {
   }
 
   if (fs.existsSync(path.join(info.base_path, 'Assets', 'Modules', info.module_name))) {
-    rimraf.sync(path.join(info.base_path, 'Assets', 'Modules', info.module_name));
+    removeRecursive(path.join(info.base_path, 'Assets', 'Modules', info.module_name));
   }
 };
