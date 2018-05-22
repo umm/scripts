@@ -12,6 +12,7 @@ module.exports = {
   },
   libraries: {
     synchronize: require('./lib/synchronize'),
+    removeRecursive: require('./lib/removeRecursive'),
     info: require('./lib/info'),
   },
 };
