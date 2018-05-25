@@ -17,6 +17,10 @@ module.exports = () => {
       excludePlatforms: [],
       allowUnsafeCode: false
   };
+
+  let target_directory_list = process.argv;
+  target_directory_list.shift();
+  target_directory_list.shift();
   
   assemblyDefinition.references = Object
   .keys(package.dependencies)
@@ -28,7 +32,7 @@ module.exports = () => {
   fs.writeFileSync(
     path.join(
       path.resolve('./'),
-      'Assets',
+      target_directory_list.length > 0 ? target_directory_list[0] : 'Assets',
       'AssemblyDefinition.asmdef'
     ),
     JSON.stringify(assemblyDefinition, undefined, 2)
