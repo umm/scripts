@@ -4,6 +4,7 @@ module.exports = {
     module: {
       install: require('./src/module/install'),
       uninstall: require('./src/module/uninstall'),
+      generateAssemblyDefinition: require('./src/module/generate_assembly_definition'),
     },
     project: {
       deploy: require('./src/project/deploy'),
