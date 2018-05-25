@@ -1,10 +1,10 @@
 module.exports = {
   scripts: {
     init: require('./src/init'),
+    generateAssemblyDefinition: require('./src/generate_assembly_definition'),
     module: {
       install: require('./src/module/install'),
       uninstall: require('./src/module/uninstall'),
-      generateAssemblyDefinition: require('./src/module/generate_assembly_definition'),
     },
     project: {
       deploy: require('./src/project/deploy'),
