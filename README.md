@@ -8,6 +8,7 @@ Scripts for umm modules.
 ## Script list
 
 * init
+* generate_assembly_definition
 * module/install
 * module/uninstall
 * project/deploy
@@ -28,11 +29,12 @@ Scripts for umm modules.
 {
 
   "scripts": {
-    "umm:init": "$(npm bin)/umm-init",
-    "umm:module:install": "$(npm bin)/umm-module-install",
-    "umm:module:uninstall": "$(npm bin)/umm-module-uninstall",
-    "postinstall": "npm run --silent umm:install",
-    "postuninstall": "npm run --silent umm:uninstall"
+    "umm:init": "umm-init",
+    "umm:generate_assembly_definition": "umm-generate_assembly_definition",
+    "umm:module:install": "umm-module-install",
+    "umm:module:uninstall": "umm-module-uninstall",
+    "postinstall": "npm run --silent umm:module:install",
+    "postuninstall": "npm run --silent umm:module:uninstall"
   },
 
 }
@@ -41,17 +43,39 @@ Scripts for umm modules.
 * Automatic deployment by `umm:module:install`.
 * Copy assets to `Assets/Modules/<module_name>/` from `Assets/` in modules excepts listed in `.npmignore`.
 
+#### Copy assets from outside of `Assets/`
+
+```json
+{
+
+  "scripts": {
+    "umm:init": "umm-init",
+    "umm:generate_assembly_definition": "umm-generate_assembly_definition",
+    "umm:module:install": "umm-module-install",
+    "umm:module:uninstall": "umm-module-uninstall",
+    "postinstall": "npm run --silent umm:module:install Foo Bar",
+    "postuninstall": "npm run --silent umm:module:uninstall"
+  },
+
+}
+```
+
+* Specify command line arguments to `umm:module:install`.
+* Copy assets to `Assets/Modules/<module_name>/Foo/` and `Assets/Modules/<module_name>/Bar/` from `Foo/` and `Bar/` in modules excepts listed in `.npmignore`.
+* You can specify one or more argument.
+
 #### Customized
 
 ```json
 {
 
   "scripts": {
-    "umm:init": "$(npm bin)/umm-init",
-    "umm:module:install": "$(npm bin)/umm-module-install",
-    "umm:module:uninstall": "$(npm bin)/umm-module-uninstall",
-    "postinstall": "npm run --silent umm:install && node ./scripts/postinstall.js",
-    "postuninstall": "npm run --silent umm:uninstall"
+    "umm:init": "umm-init",
+    "umm:generate_assembly_definition": "umm-generate_assembly_definition",
+    "umm:module:install": "umm-module-install",
+    "umm:module:uninstall": "umm-module-uninstall",
+    "postinstall": "npm run --silent umm:module:install && node ./scripts/postinstall.js",
+    "postuninstall": "npm run --silent umm:module:uninstall"
   },
 
 }
@@ -65,11 +89,12 @@ Scripts for umm modules.
 {
 
   "scripts": {
-    "umm:init": "$(npm bin)/umm-init",
-    "umm:project:deploy": "$(npm bin)/umm-project-deploy",
-    "umm:project:remove": "$(npm bin)/umm-project-remove",
-    "postinstall": "npm run --silent project:deploy",
-    "postuninstall": "npm run --silent project:remove"
+    "umm:init": "umm-init",
+    "umm:generate_assembly_definition": "umm-generate_assembly_definition",
+    "umm:project:deploy": "umm-project-deploy",
+    "umm:project:remove": "umm-project-remove",
+    "postinstall": "npm run --silent umm:project:deploy",
+    "postuninstall": "npm run --silent umm:project:remove"
   },
 
 }
@@ -85,6 +110,13 @@ const umm = require('@umm/scripts');
 
 umm.libraries.synchronize("path/to/source", "path/to/destination");
 ```
+
+### generate_assembly_definition
+
+* You can generate `.asmdef` file for module.
+    * See also: [Unity Manual](https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html)
+* Simply run `npm run umm:generate_assembly_definition`.
+* Append `references` node automatic from dependencies of `package.json`.
 
 ## Signature
 
