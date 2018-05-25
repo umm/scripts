@@ -6,7 +6,7 @@ module.exports = () => {
     console.error('`package.json` does not found.');
     process.exit(1);
   }
-  const info = require('../../lib/info');
+  const info = require('../lib/info');
   const package = require(path.join(path.resolve('./'), 'package.json'));
 
   let assemblyDefinition = {
