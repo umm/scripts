@@ -12,6 +12,7 @@
     "umm-uninstall": "bin/module/uninstall.js",
     "umm-module-install": "bin/module/install.js",
     "umm-module-uninstall": "bin/module/uninstall.js",
+    "umm-module-generate_assembly_definition": "bin/module/generate_assembly_definition.js",
     "umm-project-deploy": "bin/project/deploy.js",
     "umm-project-remove": "bin/project/remove.js"
   },
