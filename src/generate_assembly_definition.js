@@ -35,6 +35,6 @@ module.exports = () => {
       target_directory_list.length > 0 ? target_directory_list[0] : 'Assets',
       'AssemblyDefinition.asmdef'
     ),
-    JSON.stringify(assemblyDefinition, undefined, 2)
+    JSON.stringify(assemblyDefinition, undefined, 4)
   );
 };
