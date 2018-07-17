@@ -22,14 +22,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/umm-projects/scripts"
+    "url": "https://github.com/umm/scripts"
   },
   "author": "Tetsuya Mori",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/umm-projects/scripts/issues"
+    "url": "https://github.com/umm/scripts/issues"
   },
-  "homepage": "https://github.com/umm-projects/scripts#readme",
+  "homepage": "https://github.com/umm/scripts#readme",
   "dependencies": {
     "glob": "^7.1.2",
     "ignore-walk": "^3.0.1",
