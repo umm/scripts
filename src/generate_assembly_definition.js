@@ -21,7 +21,7 @@ module.exports = () => {
   let target_directory_list = process.argv;
   target_directory_list.shift();
   target_directory_list.shift();
-  
+
   assemblyDefinition.references = Object
   .keys(package.dependencies)
   .filter(x => x != '@umm/scripts')
@@ -33,7 +33,7 @@ module.exports = () => {
     path.join(
       path.resolve('./'),
       target_directory_list.length > 0 ? target_directory_list[0] : 'Assets',
-      'AssemblyDefinition.asmdef'
+      `${info.module_name}.asmdef`
     ),
     JSON.stringify(assemblyDefinition, undefined, 4)
   );
