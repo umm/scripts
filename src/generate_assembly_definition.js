@@ -25,6 +25,9 @@ module.exports = () => {
   assemblyDefinition.references = Object
   .keys(package.dependencies)
   .filter(x => x != '@umm/scripts')
+  .filter(key => {
+    return glob.sync(path.join(path.resolve('node_modules'), key, 'Assets', '*.asmdef')).length > 0;
+  })
   .map(key => {
     return key.replace(/^(@)?([^\/]+)?(\/)?([^\/]+)$/, "$2$1$4");
   });
