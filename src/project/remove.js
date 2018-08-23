@@ -8,7 +8,7 @@ module.exports = () => {
     return;
   }
 
-  if (fs.existsSync(path.join(info.base_path, 'Assets', 'Projects', info.name))) {
-    removeRecursive(path.join(info.base_path, 'Assets', 'Projects', info.name));
+  if (fs.existsSync(path.join(info.base_path, 'Assets', 'Projects', info.npm_package_name))) {
+    removeRecursive(path.join(info.base_path, 'Assets', 'Projects', info.npm_package_name));
   }
 };
