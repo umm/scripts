@@ -7,6 +7,7 @@ module.exports = () => {
     console.error('`package.json` does not found.');
     process.exit(1);
   }
+  const config = require('../lib/config');
   const info = require('../lib/info');
   const package = require(path.join(path.resolve('./'), 'package.json'));
 
@@ -31,6 +32,13 @@ module.exports = () => {
   })
   .map(key => {
     return key.replace(/^(@)?([^\/]+)?(\/)?([^\/]+)$/, "$2$1$4");
+  });
+
+  Array.prototype.push.apply(assemblyDefinition.references, config.automatic_reference_assmblies);
+  assemblyDefinition.references.sort((a, b) => {
+    a = a.toString().toLowerCase();
+    b = b.toString().toLowerCase();
+    return (a > b) ? 1 : (b > a) ? -1 : 0;
   });
 
   fs.writeFileSync(
