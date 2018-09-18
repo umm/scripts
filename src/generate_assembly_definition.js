@@ -34,7 +34,7 @@ module.exports = () => {
     return key.replace(/^(@)?([^\/]+)?(\/)?([^\/]+)$/, "$2$1$4");
   });
 
-  Array.prototype.push.apply(assemblyDefinition.references, config.automatic_reference_assmblies);
+  Array.prototype.push.apply(assemblyDefinition.references, config.automatic_reference_assemblies);
   assemblyDefinition.references.sort((a, b) => {
     a = a.toString().toLowerCase();
     b = b.toString().toLowerCase();
