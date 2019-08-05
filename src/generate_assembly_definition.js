@@ -24,14 +24,19 @@ module.exports = () => {
   target_directory_list.shift();
   target_directory_list.shift();
 
+  const asmdefPaths = (packageName) => {
+    return glob.sync(path.join(path.resolve('node_modules'), packageName, 'Assets', '*.asmdef'));
+  }
+
   assemblyDefinition.references = Object
   .keys(package.dependencies)
   .filter(x => x != '@umm/scripts')
   .filter(key => {
-    return glob.sync(path.join(path.resolve('node_modules'), key, 'Assets', '*.asmdef')).length > 0;
+    return asmdefPaths(key).length > 0;
   })
   .map(key => {
-    return key.replace(/^(@)?([^\/]+)?(\/)?([^\/]+)$/, "$2$1$4");
+    const asmdef = JSON.parse(fs.readFileSync(asmdefPaths(key)[0], 'utf8'));
+    return asmdef.name
   });
 
   Array.prototype.push.apply(assemblyDefinition.references, config.automatic_reference_assemblies);
